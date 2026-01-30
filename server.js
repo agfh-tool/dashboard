@@ -10,6 +10,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/bundeslaender', require('./routes/bundeslaender.routes'));
 app.use('/api/standorte', require('./routes/standorte.routes'));
+app.use('/_internal', require('./routes/upload.routes'));
 
 const PORT = process.env.PORT || 3000;
 
