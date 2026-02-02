@@ -1,4 +1,5 @@
 const express = require('express');
+require('./init');
 const cors = require('cors');
 const path = require('path');
 

@@ -22,7 +22,7 @@ async function init() {
       bundesland_id INTEGER NOT NULL REFERENCES bundeslaender(id),
       name TEXT NOT NULL,
       name_norm TEXT NOT NULL,
-      typ TEXT CHECK (typ IN ('Ort', 'Landkreis')),
+      typ TEXT CHECK (typ IN ('Landkreis', 'kreisfrei', 'angehoerig')),
       pflegefachkraft BOOLEAN DEFAULT false,
       anerkennung BOOLEAN DEFAULT false,
       antrag_status TEXT DEFAULT 'kein',
