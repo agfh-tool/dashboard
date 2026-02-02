@@ -110,6 +110,12 @@ function load() {
         }
       });
 
+      Object.keys(grouped).forEach(bundesland => {
+      grouped[bundesland].sort((a, b) =>
+      a.name.localeCompare(b.name, 'de', { sensitivity: 'base' })
+      );
+      });
+
       let lastStatus = null;
       let dividerInserted = false;
 
@@ -334,6 +340,13 @@ if (invalid) {
     .catch(() => {});
 }
 
+function updateTableHeaderVisibility() {
+  const table = document.querySelector('.bundesland-table');
+  const anyOpen = document.querySelector('.bl-row.open');
+
+  table.classList.toggle('bl-open', !!anyOpen);
+}
+
 const toggleBtn = document.getElementById('sidebarToggle');
 const appLayout = document.querySelector('.app-layout');
 
@@ -543,6 +556,7 @@ function closeAllBundeslaender() {
   document.querySelectorAll('.bl-content').forEach(row => {
     row.classList.add('hidden');
   });
+
   if (searchTerm) {
   filterBundeslaenderOverview();
 }

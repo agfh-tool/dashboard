@@ -629,10 +629,6 @@ tbody tr:hover {
   box-shadow: inset 3px 0 0 var(--primary);
 }
 
-tbody tr:active {
-  transform: scale(0.995);
-}
-
 tbody tr:nth-child(even) {
   background: #fafafa;
 }
@@ -1119,8 +1115,8 @@ td:nth-child(8) {
   padding: 6px;
   border-radius: 8px;
   opacity: 0.55;
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1132,7 +1128,7 @@ td:nth-child(8) {
 
 .icon-btn:hover {
   opacity: 1;
-  background: #aeffd9;
+  background: #2bffae;
   transform: scale(1.1);
 }
 
@@ -1266,7 +1262,7 @@ td:nth-child(8) {
   padding: 20px 18px;
   min-height: 110px;
   text-align: center;
-  cursor: pointer;
+  cursor: default;
 
   box-shadow: 0 6px 20px rgba(0,0,0,0.08);
   transition:
@@ -1286,34 +1282,55 @@ td:nth-child(8) {
   position: absolute;
   top: 10px;
   right: 10px;
+
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px;
+  border-radius: 10px;
+
   background: transparent;
   border: none;
   cursor: pointer;
-  color: #9ca3af;
-  opacity: 0.6;
-  transition: color 0.2s ease, opacity 0.2s ease, filter 0.2s ease;
-  z-index: 10;
+
+  color: #9d87fc;
+  opacity: 0.75;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    filter 0.2s ease;
 }
 
+
 .kachel-edit svg {
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
   stroke-width: 2.2;
 }
 
 .kachel:hover .kachel-edit {
-  color: #16a34a;
+  color: #9c87fce5;
   opacity: 1;
-  filter: drop-shadow(0 0 6px rgba(22, 163, 74, 0.7));
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.7));
 }
 
 .kachel-edit:hover {
-  transform: scale(1.05);
+  background: #16e495;
+  color: #ffffff;
 }
 
 .kachel:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 28px rgba(0,0,0,0.14);
+}
+
+.kachel-edit:hover svg {
+  stroke: #ffffff;
 }
 
 .kachel-icon {
@@ -1398,6 +1415,12 @@ td:nth-child(8) {
 .bl-content td {
   padding-top: 25px;
 }
+
+.bl-content .icon-btn svg {
+  width: 21px;
+  height: 21px;
+}
+
 
 .bl-divider td {
   padding: 12px 8px;
@@ -1505,6 +1528,10 @@ td:nth-child(8) {
 
 .bundesland-table tr {
   background: transparent;
+}
+
+.bundesland-table.bl-open thead {
+  display: none;
 }
 
 #standortSearch {
@@ -1867,4 +1894,20 @@ td:nth-child(8) {
   margin: 0;
   padding: 0;
   gap: 4px;
+}
+
+.bl-content table tbody tr {
+  position: relative;
+}
+
+.bl-content table tbody tr:hover {
+  background: #e8f1ff;
+}
+
+.bl-content table tbody tr:hover td {
+  background: #e8f1ff;
+}
+
+.bl-content table tbody tr:hover td:first-child {
+  box-shadow: inset 4px 0 0 #3b82f6;
 }
