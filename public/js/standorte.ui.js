@@ -465,9 +465,9 @@ function formatTyp(typ) {
   switch (typ) {
     case 'kreisfrei':
       return 'Kreisfreie Stadt';
-    case 'kreisangehoerig':
+    case 'angehoerig':
       return 'Kreisangehörige Stadt';
-    case 'landkreis':
+    case 'Landkreis':
       return 'Landkreis';
     default:
       return typ;

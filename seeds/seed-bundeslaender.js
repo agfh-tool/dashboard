@@ -19,13 +19,25 @@ const bundeslaender = [
   ['Thüringen', 'TH']
 ];
 
-db.serialize(() => {
-  const stmt = db.prepare(
-    `INSERT OR IGNORE INTO bundeslaender (name, kuerzel) VALUES (?, ?)`
-  );
+async function seedBundeslaender() {
+  try {
+    for (const [name, kuerzel] of bundeslaender) {
+      await db.query(
+        `
+        INSERT INTO bundeslaender (name, kuerzel)
+        VALUES ($1, $2)
+        ON CONFLICT (kuerzel) DO NOTHING
+        `,
+        [name, kuerzel]
+      );
+    }
 
-  bundeslaender.forEach(b => stmt.run(b));
-  stmt.finalize();
-});
+    console.log('Bundesländer eingefügt');
+    process.exit(0);
+  } catch (err) {
+    console.error('Seed fehlgeschlagen:', err);
+    process.exit(1);
+  }
+}
 
-console.log('Bundesländer eingefügt');
+seedBundeslaender();
