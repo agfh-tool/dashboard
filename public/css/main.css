@@ -1908,3 +1908,98 @@ td:nth-child(8) {
 .bl-content table tbody tr:hover td:first-child {
   box-shadow: inset 4px 0 0 #3b82f6;
 }
+
+/* ===== Homepage ===== */
+.home-page {
+  padding: 24px;
+  max-width: 1200px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+.home-page .home-hero {
+  margin-bottom: 100px;
+}
+
+.home-page .home-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #b82323;
+}
+
+.home-page .home-hero p {
+  font-size: 1.2rem;
+  color: #514937;
+  margin-bottom: 16px;
+}
+
+.home-page .home-kacheln {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  margin-top: 0;
+}
+
+.home-page .kachel {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.2s ease;
+}
+
+.home-page .kachel:hover {
+  transform: translateY(-4px);
+}
+
+.home-page .kachel .kachel-icon i {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 8px;
+  color: #fff;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-page .kachel .kachel-label {
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-bottom: 6px;
+  color: #35598b;
+  text-align: center; /* zentriert */
+  width: 100%;
+}
+
+
+.home-page .kachel .kachel-wert {
+  font-size: 0.95rem;
+  color: #374151;
+  width: 100%;
+}
+
+.home-page .kachel .kachel-wert ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.home-page .kachel-neu .kachel-icon i {
+  background-color: #ef4444;
+}
+
+.home-page .kachel-planung .kachel-icon i {
+  background-color: #f59e0b;
+}
+
+.home-page .kachel-tip .kachel-icon i {
+  background-color: #10b981;
+}
+
+.home-page .kachel-info .kachel-icon i {
+  background-color: #3b82f6;
+}
