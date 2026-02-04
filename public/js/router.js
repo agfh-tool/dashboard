@@ -20,6 +20,8 @@ async function loadPage(path) {
 
   app.innerHTML = html;
 
+  document.dispatchEvent(new Event("page:loaded"));
+
   setActiveSidebar(path);
 
   if (window.lucide) lucide.createIcons();

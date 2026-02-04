@@ -764,6 +764,7 @@ header {
   flex-direction: column;
   gap: 6px;
   margin-top: 18px;
+  position: relative;
 }
 
 .sidebar-section-title {
@@ -866,27 +867,25 @@ header {
   padding: 10px 14px;
 }
 
-.sidebar-toggle {
-  background: rgba(255,255,255,0.15);
-  border: none;
-  color: #fff;
+#sidebarToggle {
+  display: block;
+  margin-left: auto;
+  margin-top: 30px;
   width: 36px;
   height: 36px;
   border-radius: 10px;
-  cursor: pointer;
-  margin: 0 0 20px 8px;
-  position: absolute;
-  right: 12px;
-  bottom: 16px;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  transition: background .2s, transform .3s;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.3s;
 }
 
-.sidebar-toggle:hover {
+#sidebarToggle:hover {
   background: rgba(255,255,255,0.25);
 }
 
@@ -1972,7 +1971,7 @@ td:nth-child(8) {
   font-size: 1.25rem;
   margin-bottom: 6px;
   color: #35598b;
-  text-align: center; /* zentriert */
+  text-align: center;
   width: 100%;
 }
 
