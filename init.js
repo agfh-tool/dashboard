@@ -17,18 +17,18 @@ async function init() {
 
   // standorte
   await db.query(`
-    CREATE TABLE IF NOT EXISTS standorte (
-      id INTEGER PRIMARY KEY,
-      bundesland_id INTEGER NOT NULL REFERENCES bundeslaender(id),
-      name TEXT NOT NULL,
-      name_norm TEXT NOT NULL,
-      typ TEXT CHECK (typ IN ('Landkreis', 'kreisfrei', 'angehoerig')),
-      pflegefachkraft BOOLEAN DEFAULT false,
-      anerkennung BOOLEAN DEFAULT false,
-      antrag_status TEXT DEFAULT 'kein',
-      notiz TEXT,
-      letzte_aenderung TIMESTAMP
-    )
+CREATE TABLE IF NOT EXISTS standorte (
+  id SERIAL PRIMARY KEY,
+  bundesland_id INTEGER NOT NULL REFERENCES bundeslaender(id),
+  name TEXT NOT NULL,
+  name_norm TEXT NOT NULL,
+  typ TEXT CHECK (typ IN ('Landkreis', 'kreisfrei', 'angehoerig')),
+  pflegefachkraft BOOLEAN DEFAULT false,
+  anerkennung BOOLEAN DEFAULT false,
+  antrag_status TEXT DEFAULT 'kein',
+  notiz TEXT,
+  letzte_aenderung TIMESTAMP DEFAULT now()
+);
   `);
 
   await db.query(`

@@ -240,15 +240,12 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const id = await createStandort(req.body, {
-      force: req.body.force
-    });
+    const id = await createStandort(req.body, { force: req.body.force });
     res.json({ id });
   } catch (err) {
-    if (err.code === 'DUPLICATE') {
-      return res.status(409).json({ error: 'duplicate' });
-    }
-    res.status(500).json(err);
+    console.error('Fehler beim Erstellen eines Standorts:', err);
+    if (err.code === 'DUPLICATE') return res.status(409).json({ error: 'duplicate' });
+    res.status(500).json({ error: 'DB_INSERT_FAILED', details: err });
   }
 });
 
