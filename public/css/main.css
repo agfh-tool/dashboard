@@ -2002,3 +2002,8 @@ td:nth-child(8) {
 .home-page .kachel-info .kachel-icon i {
   background-color: #3b82f6;
 }
+
+.blue-label {
+  color: #2563eb;
+  font-weight: 600;
+}

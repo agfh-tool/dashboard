@@ -1000,8 +1000,27 @@ function renderMetaValue(field, value) {
     return html;
   }
 
-  return limitText(value, 300);
+  let text = limitText(value, 300);
+
+// style words in kachel
+const BLUE_LABELS = [
+  'Ansprechpartner',
+  'Amt',
+  'Telefon',
+  'E-Mail',
+  'Email',
+  'Vorgaben',
+  'EL'
+];
+
+BLUE_LABELS.forEach(label => {
+  const regex = new RegExp(`(${label}\\s*:)`, 'gi');
+  text = text.replace(regex, '<span class="blue-label">$1</span>');
+});
+
+return text;
 }
+
 window.closeModal = closeModal;
 window.editStandort = editStandort;
 window.openDelete = openDelete;

@@ -59,7 +59,6 @@ function initScrollToTop() {
   }
 }
 
-// Nach jeder Seite initialisieren
 document.addEventListener("DOMContentLoaded", () => {
   initScrollToTop();
 });
