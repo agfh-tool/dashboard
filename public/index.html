@@ -17,94 +17,89 @@
 <div class="app-layout">
 
   <!-- sidebar -->
-<aside class="sidebar">
+  <aside class="sidebar">
 
-  <div class="sidebar-title">
-    AFH Dashboard
-  </div>
-
-  <nav class="sidebar-nav">
-
-    <a class="sidebar-link active" href="/" data-tooltip="Startseite">
-      <i data-lucide="home" class="nav-icon-home"></i>
-      <span class="label">Startseite</span>
-    </a>
-
-    <div class="sidebar-section">
-      <div class="sidebar-section-title main">Anerkennung</div>
-
-      <div class="sidebar-sub">
-        <a class="sidebar-link" href="/" data-tooltip="Standorte">
-          <i data-lucide="map-pin"></i>
-          <span class="label">Standorte</span>
-        </a>
-
-        <a class="sidebar-link disabled" data-tooltip="Voraussetzungen">
-          <i data-lucide="file-search-corner"></i>
-          <span class="label">Voraussetzungen</span>
-        </a>
-
-        <a class="sidebar-link disabled" data-tooltip="Kontakte">
-          <i data-lucide="circle-user-round"></i>
-          <span class="label">Kontakte</span>
-        </a>
-      </div>
+    <div class="sidebar-title">
+      AFH Dashboard
     </div>
 
-<div class="sidebar-section">
-  <div class="sidebar-section-title main">Software</div>
+    <nav class="sidebar-nav">
 
-  <div class="sidebar-sub">
+      <a class="sidebar-link active" href="/" data-link data-tooltip="Startseite">
+        <i data-lucide="home" class="nav-icon-home"></i>
+        <span class="label">Startseite</span>
+      </a>
 
-    <a class="sidebar-link disabled" data-tooltip="In Arbeit – Modul 1">
-      <i data-lucide="wrench"></i>
-      <span class="label">in Arbeit</span>
-    </a>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title main">Anerkennung</div>
 
-    <a class="sidebar-link disabled" data-tooltip="In Arbeit – Modul 2">
-      <i data-lucide="wrench"></i>
-      <span class="label">in Arbeit</span>
-    </a>
+        <div class="sidebar-sub">
+          <a class="sidebar-link" href="/standorte" data-link data-tooltip="Standorte">
+            <i data-lucide="map-pin"></i>
+            <span class="label">Standorte</span>
+          </a>
 
-    <a class="sidebar-link disabled" data-tooltip="In Arbeit – Modul 3">
-      <i data-lucide="wrench"></i>
-      <span class="label">in Arbeit</span>
-    </a>
+          <a class="sidebar-link disabled" data-tooltip="Voraussetzungen">
+            <i data-lucide="file-search-corner"></i>
+            <span class="label">Voraussetzungen</span>
+          </a>
 
-  </div>
-</div>
-
-    <div class="sidebar-section">
-      <div class="sidebar-section-title main">Weiteres</div>
-      <div class="sidebar-sub">
-        <a class="sidebar-link disabled" data-tooltip="Informationen">
-          <i data-lucide="book-open"></i>
-          <span class="label">Informationen</span>
-        </a>
-
-        <a class="sidebar-link disabled" data-tooltip="Daten">
-          <i data-lucide="settings"></i>
-          <span class="label">Daten</span>
-        </a>
+          <a class="sidebar-link disabled" data-tooltip="Kontakte">
+            <i data-lucide="circle-user-round"></i>
+            <span class="label">Kontakte</span>
+          </a>
+        </div>
       </div>
-    </div>
 
-  </nav>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title main">Software</div>
 
-  <!-- Toggle -->
-  <button id="sidebarToggle" class="sidebar-toggle" aria-label="Sidebar einklappen">
-    ❮
-  </button>
+        <div class="sidebar-sub">
+          <a class="sidebar-link disabled" data-tooltip="In Arbeit – Modul 1">
+            <i data-lucide="wrench"></i>
+            <span class="label">in Arbeit</span>
+          </a>
 
-</aside>
+          <a class="sidebar-link disabled" data-tooltip="In Arbeit – Modul 2">
+            <i data-lucide="wrench"></i>
+            <span class="label">in Arbeit</span>
+          </a>
 
-  <!-- area -->
+          <a class="sidebar-link disabled" data-tooltip="In Arbeit – Modul 3">
+            <i data-lucide="wrench"></i>
+            <span class="label">in Arbeit</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-title main">Weiteres</div>
+        <div class="sidebar-sub">
+          <a class="sidebar-link disabled" data-tooltip="Informationen">
+            <i data-lucide="book-open"></i>
+            <span class="label">Informationen</span>
+          </a>
+
+          <a class="sidebar-link disabled" data-tooltip="Daten">
+            <i data-lucide="settings"></i>
+            <span class="label">Daten</span>
+          </a>
+        </div>
+      </div>
+
+    </nav>
+
+    <button id="sidebarToggle" class="sidebar-toggle" aria-label="Sidebar einklappen">
+      ❮
+    </button>
+
+  </aside>
+
+  <!-- main area -->
   <div class="main-area">
 
-    <!-- HEADER -->
 <header class="app-header">
 
-  <!-- LEFT -->
   <div class="header-left">
     <img src="assets/logo.png" alt="Logo" class="header-logo">
     <div class="header-title">
@@ -113,25 +108,19 @@
     </div>
   </div>
 
-  <!-- CENTER NAV -->
   <nav class="header-nav">
-    <a class="active" href="/">Standorte</a>
-    <a href=>Voraussetzungen</a>
-    <a href=>Kontakte</a>
+    <a class="active" href="/" data-link>Startseite</a>
+    <a href="/standorte" data-link>Standorte</a>
   </nav>
 
-  <!-- RIGHT -->
   <div class="header-right">
 
-    <!-- Action -->
     <button class="header-action" title="Neu">
       <i data-lucide="plus"></i>
     </button>
 
-    <!-- Divider -->
     <div class="header-divider"></div>
 
-    <!-- User -->
     <div class="user-menu">
       <div class="avatar">AF</div>
       <span class="user-name">Admin</span>
@@ -141,261 +130,15 @@
   </div>
 </header>
 
-    <!-- CONT -->
-    <main class="container page">
-
-      <!-- Toolbar -->
-      <div style="display:flex; justify-content:space-between; margin-bottom:16px;">
-        <div></div>
-        <button id="addBtn">+ Standort hinzufügen</button>
-      </div>
-
-<!-- Suche -->
-<div class="search-wrapper">
-  <input
-    id="standortSearch"
-    type="text"
-    placeholder="Standort suchen (z.B. Neuss)"
-  >
-<span
-  id="clearSearch"
-  class="clear-search hidden"
-  role="button"
-  aria-label="Suche löschen"
->
-  ✕
-</span>
-</div>
-
-
-<!-- edit Modal -->
-<div id="metaModal" class="modal hidden">
-  <div class="modal-backdrop"></div>
-
-  <div class="modal-box">
-
-    <h3 id="metaTitle"></h3>
-
-    <form class="meta-form">
-
-      <div class="full">
-        <label>Text</label>
-        <textarea id="metaTextarea" rows="6"></textarea>
-      </div>
-
-    </form>
-
-    <div class="modal-actions">
-      <button type="button" onclick="closeMetaModal()">Abbrechen</button>
-      <button type="button" class="primary" onclick="saveMeta()">Speichern</button>
-    </div>
+    <!-- side content -->
+    <main id="app" class="container page"></main>
 
   </div>
 </div>
-
-      <!-- Tabelle -->
-      <table class="bundesland-table">
-<thead>
-  <tr>
-    <th style="width:40px;"></th>
-    <th>Bundesland</th>
-    <th>Bundesweite Anerkennungen</th>
-    <th>Notiz</th>
-  </tr>
-</thead>
-        <tbody id="bundeslandTable"></tbody>
-      </table>
-
-    </main>
-  </div>
-</div>
-
-<!-- MODAL -->
-<div id="formError" class="form-error hidden"></div>
-<div id="modal" class="modal hidden" aria-hidden="true">
-
-  <div class="modal-backdrop"></div>
-
-  <div class="modal-box" role="dialog" aria-modal="true">
-
-    <!-- Header -->
-    <div class="modal-header">
-      <h3>Standort hinzufügen</h3>
-
-      <button class="modal-close" onclick="closeModal()" aria-label="Schließen">
-        ✕
-      </button>
-    </div>
-
-    <!-- Body -->
-    <div class="modal-body">
-
-      <div class="form-group">
-        <label>Bundesland</label>
-        <select id="bundesland"></select>
-      </div>
-
-      <div class="form-group">
-        <label>Standort</label>
-        <input id="name" placeholder="Ort oder Landkreis">
-      </div>
-
-      <div class="form-group">
-        <label>Typ</label>
-        <select id="typ">
-          <option value="" disabled selected>Typ auswählen</option>
-          <option value="kreisfrei">kreisfreie Stadt</option>
-          <option value="Landkreis">Landkreis</option>
-          <option value="angehoerig">Kreisangehörige Stadt</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label class="group-label">Optionen</label>
-
-        <div class="checkbox-group">
-          <label class="checkbox-item">
-            <input type="checkbox" id="pfk">
-            <span>Pflegefachkraft</span>
-          </label>
-
-          <label class="checkbox-item">
-            <input type="checkbox" id="anerkennung">
-            <span>Anerkennung</span>
-          </label>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label>Status</label>
-        <select id="status">
-          <option value="" disabled selected>Status auswählen</option>
-          <option value="kein">Kein Antrag</option>
-          <option value="in_pruefung">In Prüfung</option>
-          <option value="genehmigt">Genehmigt</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label>Notiz</label>
-        <textarea id="notiz" rows="3" maxlength="300"></textarea>
-        <small id="notizCounter">0 / 300 Zeichen</small>
-      </div>
-
-    </div>
-
-    <!-- Footer -->
-    <div class="modal-footer">
-      <button class="btn-secondary" onclick="closeModal()">Abbrechen</button>
-      <button class="btn-primary" onclick="save()">Speichern</button>
-    </div>
-
-  </div>
-</div>
-
-<div id="confirmModal" class="modal hidden">
-  <div class="modal-backdrop"></div>
-  <div class="modal-box">
-    <div class="modal-header">
-      <h3 id="confirmTitle"></h3>
-    </div>
-    <div class="modal-body">
-      <p id="confirmText"></p>
-    </div>
-    <div class="modal-footer">
-      <button class="btn-secondary" onclick="closeConfirm()">Abbrechen</button>
-      <button class="btn-primary" id="confirmOk">Trotzdem speichern</button>
-    </div>
-  </div>
-</div>
-
-<div id="kontaktModal" class="modal hidden">
-  <div class="modal-backdrop" onclick="closeKontaktModal()"></div>
-
-  <div class="modal-box">
-    <h2 id="kontaktTitle">Kontakt</h2>
-
-    <label>Name</label>
-    <input id="kontaktName" type="text">
-
-    <label>Telefon</label>
-    <input id="kontaktTelefon" type="text">
-
-    <label>E-Mail</label>
-    <input id="kontaktEmail" type="email">
-
-    <label>Notiz</label>
-    <textarea id="kontaktNotiz" rows="3"></textarea>
-
-    <div class="modal-actions">
-      <button onclick="closeKontaktModal()">Abbrechen</button>
-      <button class="primary" onclick="saveKontakt()">Speichern</button>
-    </div>
-  </div>
-</div>
-
-<div id="deleteModal" class="modal hidden">
-  <div class="modal-backdrop"></div>
-
-  <div class="modal-box">
-    <div class="modal-header">
-      <h3>Standort löschen</h3>
-    </div>
-
-    <div class="modal-body">
-      <p id="deleteText"></p>
-    </div>
-
-    <div class="modal-footer">
-      <button class="btn-secondary" onclick="closeDelete()">Abbrechen</button>
-      <button class="btn-danger" id="deleteConfirmBtn">Löschen</button>
-    </div>
-  </div>
-</div>
-
-<div id="noteModal" class="modal hidden">
-  <div class="modal-backdrop" onclick="closeNote()"></div>
-
-  <div class="modal-box">
-    <div class="modal-header">
-      <h3 id="noteTitle"></h3>
-      <button class="modal-close" onclick="closeNote()">✕</button>
-    </div>
-
-    <div class="modal-body">
-      <p id="noteContent" class="note-content"></p>
-    </div>
-
-    <div class="modal-footer">
-      <button class="btn-secondary" onclick="closeNote()">Schließen</button>
-    </div>
-  </div>
-</div>
-
-<button
-  id="scrollToTop"
-  class="scroll-to-top"
-  aria-label="Nach oben scrollen"
->
-  <svg
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true"
-  >
-    <path
-      d="M6 14l6-6 6 6"
-      stroke="currentColor"
-      stroke-width="2.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    />
-  </svg>
-</button>
 
 <script src="js/standorte.ui.js"></script>
+<script src="js/router.js"></script>
 <script src="js/global.js"></script>
+
 </body>
 </html>

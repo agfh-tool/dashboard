@@ -1,4 +1,4 @@
-// Server
+// server
 const express = require('express');
 const multer = require('multer');
 const { parse } = require('csv-parse/sync');
@@ -7,9 +7,7 @@ const db = require('../db/db');
 const router = express.Router();
 const upload = multer({ storage: multer.memoryStorage() });
 
-/* =========================
-   Helper Functions
-========================= */
+// helper
 
 async function resolveBundeslandId(name) {
   if (!name) {
@@ -84,9 +82,7 @@ function parseBool(value) {
   return v === '1' || v === 'true' || v === 'ja' || v === 'yes';
 }
 
-/* =========================
-   META
-========================= */
+// meta
 
 router.get('/bundeslaender/meta', async (req, res) => {
   try {
@@ -153,9 +149,7 @@ router.put('/bundeslaender/meta', async (req, res) => {
   }
 });
 
-/* =========================
-   Standorte
-========================= */
+// location
 
 router.get('/', async (req, res) => {
   try {
@@ -323,9 +317,7 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
-/* =========================
-   Kontakt
-========================= */
+// contact
 
 router.get('/:id/kontakt', async (req, res) => {
   try {

@@ -1,3 +1,8 @@
+window.initStandorteUI = function () {
+
+  try {
+
+    console.log("INIT START");
 let editId = null;
 const nameInput = document.getElementById('name');
 const typSelect = document.getElementById('typ');
@@ -60,7 +65,8 @@ function clearError() {
   formError.classList.add('hidden');
 }
 
-document.getElementById('addBtn').onclick = openModal;
+const addBtn = document.getElementById('addBtn');
+if (addBtn) addBtn.onclick = openModal;
 
 load();
 
@@ -346,16 +352,6 @@ function updateTableHeaderVisibility() {
 
   table.classList.toggle('bl-open', !!anyOpen);
 }
-
-const toggleBtn = document.getElementById('sidebarToggle');
-const appLayout = document.querySelector('.app-layout');
-
-toggleBtn.addEventListener('click', () => {
-  appLayout.classList.toggle('sidebar-collapsed');
-
-  toggleBtn.textContent =
-    appLayout.classList.contains('sidebar-collapsed') ? '❯' : '❮';
-});
 
 function editStandort(id) {
   editId = id;
@@ -763,6 +759,7 @@ function renderTextKachel(title, value, bundesland, field) {
   `;
 }
 
+const standortSearch = document.getElementById('standortSearch');
 const clearSearchBtn = document.getElementById('clearSearch');
 
 standortSearch.addEventListener('input', e => {
@@ -920,20 +917,24 @@ function formatKontaktText(text) {
 
 const scrollToTopBtn = document.getElementById("scrollToTop");
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 200) {
-    scrollToTopBtn.classList.add("visible");
-  } else {
-    scrollToTopBtn.classList.remove("visible");
-  }
-});
+if (scrollToTopBtn) {
 
-scrollToTopBtn.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 200) {
+      scrollToTopBtn.classList.add("visible");
+    } else {
+      scrollToTopBtn.classList.remove("visible");
+    }
   });
-});
+
+  scrollToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
+}
 
 function openKontaktModal(id, name) {
   currentKontaktStandortId = id;
@@ -1022,4 +1023,25 @@ function renderMetaValue(field, value) {
 
   return limitText(value, 300);
 }
+window.closeModal = closeModal;
+window.editStandort = editStandort;
+window.openDelete = openDelete;
+window.openKontaktModal = openKontaktModal;
+window.closeKontaktModal = closeKontaktModal;
+window.saveKontakt = saveKontakt;
+window.closeDelete = closeDelete;
+window.openNote = openNote;
+window.closeNote = closeNote;
+window.handleNoteClick = handleNoteClick;
+window.openConfirm = openConfirm;
+window.closeConfirm = closeConfirm;
+window.save = save;
+window.closeMetaModal = closeMetaModal;
+window.saveMeta = saveMeta;
 
+    console.log("INIT OK");
+
+  } catch (err) {
+    console.error("INIT CRASH:", err);
+  }
+};

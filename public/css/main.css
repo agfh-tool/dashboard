@@ -178,7 +178,7 @@ header {
 }
 
 h2 {
-  color: #b91c1c; /* Rot */
+  color: #b91c1c;
   margin: 0;
 }
 
@@ -1433,17 +1433,14 @@ td:nth-child(8) {
   background: #fafafa;
 }
 
-/* Rot: ohne Anerkennung */
 .bl-divider-no td {
-  color: #b91c1c; /* dezentes Rot */
+  color: #b91c1c;
 }
 
-/* Grün: mit Anerkennung */
 .bl-divider-yes td {
-  color: #15803d; /* ruhiges Grün */
+  color: #15803d;
 }
 
-/* Extra Abstand zwischen den Gruppen */
 .bl-divider-yes td {
   padding-top: 28px;
 }

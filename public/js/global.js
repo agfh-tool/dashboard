@@ -1,25 +1,32 @@
-// smooth page
-
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('a[href]').forEach(link => {
+
+  document.querySelectorAll('a[href]:not([data-link])').forEach(link => {
+
     link.addEventListener('click', e => {
       const url = link.getAttribute('href');
 
-      // intern
       if (
         url &&
         !url.startsWith('#') &&
         !url.startsWith('http') &&
         !link.hasAttribute('download')
       ) {
-        e.preventDefault();
-
         document.body.classList.add('page-leave');
-
-        setTimeout(() => {
-          window.location.href = url;
-        }, 200);
       }
     });
+
   });
+
+  const toggleBtn = document.getElementById('sidebarToggle');
+  const appLayout = document.querySelector('.app-layout');
+
+  if (toggleBtn && appLayout) {
+    toggleBtn.addEventListener('click', () => {
+      appLayout.classList.toggle('sidebar-collapsed');
+
+      toggleBtn.textContent =
+        appLayout.classList.contains('sidebar-collapsed') ? '❯' : '❮';
+    });
+  }
+
 });

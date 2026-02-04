@@ -1,10 +1,10 @@
-// Server
+// server
 const express = require('express');
 const db = require('../db/db');
 
 const router = express.Router();
 
-// all bundesländer
+// all bundeslaender
 router.get('/', async (req, res) => {
   try {
     const { rows } = await db.query(
