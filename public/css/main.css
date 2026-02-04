@@ -1,3 +1,7 @@
+html {
+  font-size: clamp(14px, 0.9vw, 16px);
+}
+
 :root {
   --primary: #4f46e5;
   --bg: #f6f7f9;
@@ -698,7 +702,7 @@ header {
 /* ===== SIDEBAR ===== */
 
 .sidebar {
-  width: 280px;
+  width: clamp(70px, 18vw, 280px);
   background: linear-gradient(180deg, #ad2030, #ad2030);
   color: #fff;
   padding: 20px 16px;
@@ -2006,4 +2010,12 @@ td:nth-child(8) {
 .blue-label {
   color: #2563eb;
   font-weight: 600;
+}
+
+img,
+svg,
+table,
+input,
+textarea {
+  max-width: 100%;
 }
