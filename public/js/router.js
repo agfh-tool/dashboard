@@ -61,4 +61,8 @@ window.addEventListener("popstate", () => {
   loadPage(location.pathname);
 });
 
-loadPage(location.pathname);
+document.addEventListener("auth:granted", () => {
+  loadPage(location.pathname);
+});
+
+requireAuth();
