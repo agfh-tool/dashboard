@@ -1,10 +1,7 @@
 const AUTH_KEY = "afh_access_granted";
 
-/**
- * PUBLIC CONFIG
- * später ersetzt durch echtes Login
- */
-const ACCESS_PASSWORD = "afh2026."; // ← dein temporäres Passwort
+// replace later
+const ACCESS_PASSWORD = "afh2026."; // pw
 
 function isAuthorized() {
   return sessionStorage.getItem(AUTH_KEY) === "1";
@@ -14,9 +11,6 @@ function setAuthorized() {
   sessionStorage.setItem(AUTH_KEY, "1");
 }
 
-/**
- * Overlay bauen (kein HTML anfassen nötig)
- */
 function createPasswordGate() {
 
   const modal = document.createElement("div");
@@ -84,9 +78,7 @@ function createPasswordGate() {
   setTimeout(() => input.focus(), 50);
 }
 
-/**
- * GLOBAL GUARD
- */
+//global guard
 function requireAuth() {
 
   if (isAuthorized()) {
